@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: wordpress
+  name: phpmyadmin-configmap
+data:
+  HOST: mysql-service
+  PORT: "3306"
