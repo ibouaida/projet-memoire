@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ibou184/frontend-ml-project:latest
+        image: ibou1984/ml_project-frontend:latest
         ports:
         - containerPort: 3000
         env:

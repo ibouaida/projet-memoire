@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: ibou184/backend-ml-project:latest
+        image: ibou1984/ml_project-backend:latest
         ports:
         - containerPort: 5000
         env:
