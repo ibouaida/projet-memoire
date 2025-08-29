@@ -1,14 +1,16 @@
-FROM node:14
+# Étape 1 : builder l'application React
+FROM node:14 AS build
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package*.json ./
 RUN npm install
 
 COPY . .
+RUN npm run build
 
-EXPOSE 3000
-# Important pour que react-scripts écoute sur 0.0.0.0
-ENV HOST 0.0.0.0
-
-CMD ["npm", "start"]
+# Étape 2 : servir avec Nginx
+FROM nginx:stable-alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

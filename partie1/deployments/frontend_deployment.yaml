@@ -19,7 +19,7 @@ spec:
       - name: frontend
         image: ibou1984/ml_project-frontend:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         env:
         - name: REACT_APP_BACKEND_URL
           valueFrom:
