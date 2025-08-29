@@ -24,7 +24,7 @@ spec:
         - name: REACT_APP_BACKEND_URL
           valueFrom:
             configMapKeyRef:
-              name: frontent-configmap
+              name: frontend-configmap
               key: REACT_APP_BACKEND_URL
         - name: CHOKIDAR_USEPOLLING
           valueFrom:
