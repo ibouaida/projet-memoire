@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  namespace: wordpress
-  name: wordpress-configmap
-data:
-  URL: mysql-service
