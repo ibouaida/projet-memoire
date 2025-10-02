@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: frontend
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/ibouaida/projet-memoire.git'
+    targetRevision: main
+    path: k8s/frontend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true      # Supprimer les objets qui n'existent plus dans Git
+      selfHeal: true   # Corriger automatiquement si quelqu’un change directement dans le cluster
